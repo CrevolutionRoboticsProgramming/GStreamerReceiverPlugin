@@ -1,30 +1,33 @@
 package org.frc2851.data.type;
 
 import edu.wpi.first.shuffleboard.api.data.ComplexDataType;
-import edu.wpi.first.shuffleboard.api.util.Maps;
-import org.frc2851.data.Placeholder;
+import org.frc2851.data.PlaceholderData;
 
 import java.util.Map;
 import java.util.function.Function;
 
-public class PlaceholderType extends ComplexDataType<Placeholder>
+/**
+ * Represents data of the {@link PlaceholderData} type.
+ */
+public final class PlaceholderType extends ComplexDataType<PlaceholderData>
 {
-    private static final String TYPE_NAME = "Placeholder";
     public static final PlaceholderType Instance = new PlaceholderType();
+    private static final String TYPE_NAME = "PlaceholderData";
 
-    private PlaceholderType() {
-        super(TYPE_NAME, Placeholder.class);
+    private PlaceholderType()
+    {
+        super(TYPE_NAME, PlaceholderData.class);
     }
 
     @Override
-    public Function<Map<String, Object>, Placeholder> fromMap()
+    public Function<Map<String, Object>, PlaceholderData> fromMap()
     {
-        return map -> new Placeholder();
+        return map -> new PlaceholderData();
     }
 
     @Override
-    public Placeholder getDefaultValue()
+    public PlaceholderData getDefaultValue()
     {
-        return new Placeholder();
+        return new PlaceholderData();
     }
 }

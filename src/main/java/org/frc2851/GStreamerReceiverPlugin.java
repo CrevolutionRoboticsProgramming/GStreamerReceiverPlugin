@@ -1,6 +1,5 @@
 package org.frc2851;
 
-import com.google.common.collect.ImmutableList;
 import edu.wpi.first.shuffleboard.api.data.DataType;
 import edu.wpi.first.shuffleboard.api.plugin.Description;
 import edu.wpi.first.shuffleboard.api.plugin.Plugin;
@@ -10,6 +9,7 @@ import org.frc2851.data.type.PlaceholderType;
 import org.frc2851.widget.GStreamerReceiverWidget;
 
 import java.util.List;
+import java.util.Map;
 
 @Description(
         group = "org.frc2851",
@@ -20,6 +20,14 @@ import java.util.List;
 public class GStreamerReceiverPlugin extends Plugin
 {
     @Override
+    public List<DataType> getDataTypes()
+    {
+        return List.of(
+                PlaceholderType.Instance
+        );
+    }
+/*
+    @Override
     public List<ComponentType> getComponents()
     {
         return List.of(
@@ -28,10 +36,11 @@ public class GStreamerReceiverPlugin extends Plugin
     }
 
     @Override
-    public List<DataType> getDataTypes()
+    public Map<DataType, ComponentType> getDefaultComponents()
     {
-        return ImmutableList.of(
-                PlaceholderType.Instance
+        return Map.of(
+                PlaceholderType.Instance, WidgetType.forAnnotatedWidget(GStreamerReceiverWidget.class)
         );
     }
+    */
 }

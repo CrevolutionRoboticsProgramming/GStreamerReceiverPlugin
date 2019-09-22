@@ -4,10 +4,11 @@ import edu.wpi.first.shuffleboard.api.data.ComplexData;
 
 import java.util.Map;
 
-public final class Placeholder extends ComplexData<Placeholder>
+public final class PlaceholderData extends ComplexData<PlaceholderData>
 {
-    public Placeholder()
-    {}
+    public PlaceholderData()
+    {
+    }
 
     @Override
     public Map<String, Object> asMap()
